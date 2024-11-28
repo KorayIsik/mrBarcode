@@ -2,7 +2,17 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>MrBarcode</title>
+
+    <style>
+        #barcode {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            /* visibility: hidden; */
+        }
+    </style>
 
     <script type="text/javascript" src="js/JsBarcode.code128.min.js"></script>
     <script type="text/javascript">
@@ -20,15 +30,17 @@
                 format: "CODE128",
                 displayValue: true,
                 width: 5,
-                height: 100
             });
         }
     </script>
 </head>
 
 <body onload="generateBarcode()">
-    <p>How did that get there?</p>
-    <svg id="barcode"></svg>
+    <div style="width:100%;">
+        <p>How did that get there?</p>
+        <svg id="barcode"></svg>
+    </div>
+    
 </body>
 
 </html>
