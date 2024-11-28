@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MrBarcode</title>
+
+    <script type="text/javascript" src="js/JsBarcode.code128.min.js"></script>
+    <script type="text/javascript">
+        function generateBarcode() {
+            let date = new Date();
+            date.setDate(date.getDate() + 1);
+    
+            const day = ('0' + date.getDate()).slice(-2);
+            const month = ('0' + (date.getMonth() + 1)).slice(-2)
+            const year = date.getFullYear().toString().substr(-2);
+    
+            const barcodeString = "88" + year + month + day;
+        
+            JsBarcode("#barcode", barcodeString, {
+                format: "CODE128",
+                displayValue: true,
+                width: 5,
+                height: 100
+            });
+        }
+    </script>
+</head>
+
+<body onload="generateBarcode()">
+    <p>How did that get there?</p>
+    <svg id="barcode"></svg>
+</body>
+
+</html>
